@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["esnext", "dom"], // 'dom' can be useful for some web standard APIs Deno supports
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    // Specify Deno types
+    // This tells TypeScript to use Deno's built-in type definitions
+    "types": [
+      // "https://deno.land/x/deno/cli/tests/dts/typescript.d.ts"
+    ],
+    // It's good practice to specify the root directory of your source files
+    // if all your functions are within subdirectories of 'functions'
+    // "rootDir": "./", 
+    "baseUrl": "./", // This helps with module resolution if you have local modules
+    "paths": { // Optional: if you want to define path aliases
+      "*": [
+        "types/*"
+      ]
+    }
+  },
+  "include": [
+    "./**/*.ts" // This will include all .ts files within the 'functions' directory and its subdirectories
+  ],
+  "exclude": [
+    "node_modules" // Standard practice to exclude node_modules
+  ]
+} 
